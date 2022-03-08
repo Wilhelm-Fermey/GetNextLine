@@ -6,7 +6,7 @@
 /*   By: wilhelmfermey <marvin@42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 12:21:22 by wilhelmfermey     #+#    #+#             */
-/*   Updated: 2022/03/07 20:33:43 by wilhelmfermey    ###   ########.fr       */
+/*   Updated: 2022/03/08 08:24:51 by wilhelmfermey    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,23 +18,16 @@ char	*get_next_line(int fd)
 	static char	buff[BUFFER_SIZE / BUFFER_SIZE + 1];
 	char		*str;
 
-	str = malloc(BUFFER_SIZE / BUFFER_SIZE + 1);
-	if (!str)
-		return (NULL);
+	str = NULL;
 	if (res == 0)
 	{
 		res = read(fd, buff, 1);
 		buff[res] = '\0';
 	}
 	if (res > 0 && buff[0] != '\0')
-	{
 		str = ft_read(fd, buff, str, res);
-	}
 	else
-	{
-		free(str);
 		return (NULL);
-	}
 	return (str);
 	
 }
