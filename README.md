@@ -2,4 +2,4 @@
 
 ## Description
 
-📍  Cette fonction de lire le contenu d'un fichier ligne par ligne. 🧰🔧
+📍  This function reads the content of a file line by line. 🧰🔧
